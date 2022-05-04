@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<!-- Google Fonts -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;600;700;800&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;500&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Spartan&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- Bootstrap CSS -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+			crossorigin="anonymous"
+		/>
+
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="static/listings.css" />
+
+		<!-- Animation -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+		/>
+
+		<title>CloudBnB</title>
+	</head>
+	<body>
+		<!-- Navigation Bar -->
+		<nav class="navbar navbar-expand-lg navbar-dark">
+			<div
+				class="container-fluid animate__animated animate__fadeIn animate__delay-3s"
+			>
+				<!-- Brand Name-->
+				<a class="navbar-brand" href="/">
+					<!-- <img src="images/logo-v1.png" alt="" height="55em" width="55em" /> -->
+					<i class="fa fa-cloud"></i> &nbsp; cloudbnb
+				</a>
+
+				<!-- Menu Button -->
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<!-- Webpage Links -->
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav ms-auto">
+						<!-- Home -->
+						<li class="nav-item mx-4">
+							<a
+								id="navbar-item"
+								class="nav-link active"
+								aria-current="page"
+								href="#"
+								>Home</a
+							>
+						</li>
+
+						<!-- About -->
+						<li class="nav-item mx-4">
+							<a
+								id="navbar-item"
+								class="nav-link active"
+								aria-current="page"
+								href="#about-me-section"
+								>Listings</a
+							>
+						</li>
+
+						<!-- Skills -->
+						<li class="nav-item mx-4">
+							<a
+								id="navbar-item"
+								class="nav-link active"
+								aria-current="page"
+								href="#skills-section"
+								>Availability</a
+							>
+						</li>
+
+						<!-- Projects -->
+						<li class="nav-item mx-4">
+							<a
+								id="navbar-item"
+								class="nav-link active"
+								aria-current="page"
+								href="#projects-title"
+								>Reviews</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div id="search-section">
+			<div class="hero active">
+				<div id="searchBox">
+					<!-- <i id="googleIcon" class="fa fa-cloud fa-3x"></i> -->
+					<input type="text" placeholder="Search anywhere..." />
+					<!-- <i class="fas fa-microphone fa-3x"></i> -->
+					<!-- <i class="fas fa-microphone fa-3x"></i> -->
+					<!-- <i class="fa-magnifying-glass"></i> -->
+					<!-- <i class="fa-solid fa-magnifying-glass"></i> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="grid-container">
+				{% for listing in listings %}
+				<div class="grid-item">
+					<div>
+						<div class="image">
+							<img src="{{ listing.listing_image }}" />
+						</div>
+
+						<div class="grid-text-container">
+							<div class="grid-text-item">
+								<h5><strong>{{ listing.neighborhood }}, CA</strong></h5>
+							</div>
+							<div class="grid-text-item">
+								<h5 id="light-text">{{ listing.price }} night</h5>
+							</div>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+
+		<!-- Bootstrap Bundle with Popper -->
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+			crossorigin="anonymous"
+		></script>
+
+		<!-- Font Awesome -->
+		<script
+			src="https://kit.fontawesome.com/07ff917b01.js"
+			crossorigin="anonymous"
+		></script>
+
+		<!-- Script JS: Counting Animation -->
+		<script src="js/script.js"></script>
+
+		<!-- Ion Icons -->
+		<script
+			type="module"
+			src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+		></script>
+		<script
+			nomodule
+			src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+		></script>
+	</body>
+</html>
