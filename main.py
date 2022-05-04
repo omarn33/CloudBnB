@@ -11,9 +11,9 @@ if len(sys.argv) != 5:
 
 city = sys.argv[2].lower() # City to process data for
 dataset = sys.argv[3].lower() # Specific csv file to process
-filename = '../AirBnB-Datasets/' + city + '/' + dataset + '.csv' # Change if path is different.
+filename = '../AirBnB-Datasets/' + city + '/' + dataset + '.csv' # Change if path is different
 
-LIMIT = int(sys.argv[4]) # Maximum number of documents that could be inserted
+LIMIT = int(sys.argv[4]) # Maximum number of attempts to insert/update documents
 count = 0 # Number of attempted insertions/updates
 
 # Check if city is in dataset:
@@ -76,7 +76,7 @@ def loadCalendar():
                 currPeriod['total_nights'] += 1
                 prevRow = row
             else:
-                # Insert availability period and move on to next one:
+                # Insert availability period and move on to the next one:
                 try:
                     collection.update_one({'_id': prevRow['listing_id']}, {
                         '$set': {
