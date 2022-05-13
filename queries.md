@@ -54,7 +54,7 @@ db.listings.aggregate([
 ]).pretty();
 ```
 
-### Query 3
+### Query 2
 ```
 db.listings.aggregate([
     // Filter city and room type
@@ -107,7 +107,7 @@ db.listings.aggregate([
 ]).pretty();
 ```
 
-### Query 4
+### Query 3
 ```
 db.listings.aggregate([
     // Filter city and room type

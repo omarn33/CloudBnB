@@ -3,8 +3,7 @@ import json
 
 app = Flask(__name__)
 
-with open('data.json', 'r', encoding='utf8') as f:
-    data = json.load(f)
+data = []
 
 @ app.route('/')
 def home():
